@@ -10,7 +10,7 @@ def get_uncovered_patterns():
         for line in file.readlines():
             line = line.strip()
             if line:
-                if not glob.glob(line):
+                if not glob.glob(line) and not line.startswith('#'):
                     yield line
 
 
